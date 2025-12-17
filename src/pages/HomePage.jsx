@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import viaggi from '../data/data';
 import { useEffect, useState } from 'react';
 
@@ -84,7 +85,9 @@ export default function HomePage() {
                                                     <h5 className="card-title">{viaggio.dataFine}</h5>
                                                 </div>
                                             </div>
-                                            <button className="btn btn-primary">Vedi dettagli</button>
+                                            <Link to={`/details/${viaggio.id}`}>
+                                                <button className="btn btn-primary">Vedi dettagli</button>
+                                            </Link>
 
                                         </div>
                                     </div>
@@ -99,7 +102,7 @@ export default function HomePage() {
 
                 </div>
 
-            </main>
+            </main >
         </>
     )
 }
