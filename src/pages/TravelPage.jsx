@@ -9,7 +9,7 @@ export default function TravelPage({ viaggi }) {
     const [searchText, setSearchText] = useState("");
     const [searchName, setSearchName] = useState("");
     const [searchLast, setSearchLast] = useState("");
-    console.log(searchText, searchName, searchLast);
+    console.log(searchName, searchLast);
 
     const [travelers, setTravelers] = useState(viaggio.viaggiatori)
 
@@ -21,6 +21,12 @@ export default function TravelPage({ viaggi }) {
             const filtered = travelers.filter(traveler => (
                 traveler.nome.toLowerCase().includes(searchName.toLowerCase()) ||
                 traveler.cognome.toLowerCase().includes(searchName.toLowerCase())
+            ))
+            setTravelers(filtered)
+        } else {
+            const filtered = travelers.filter(traveler => (
+                traveler.nome.toLowerCase().includes(searchName.toLowerCase()) &&
+                traveler.cognome.toLowerCase().includes(searchLast.toLowerCase())
             ))
             setTravelers(filtered)
         }
