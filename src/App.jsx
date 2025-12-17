@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import DefaultLayout from './layout/DefaultLayout'
-import Travels from "./pages/Travels"
+import HomePage from "./pages/HomePage"
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
-            <Route path="/" element={<Travels />} />
+            <Route path="/" element={<HomePage />} />
           </Route>
         </Routes>
       </BrowserRouter>

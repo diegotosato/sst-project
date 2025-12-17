@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom';
 import viaggi from '../data/data';
 import { useEffect, useState } from 'react';
 
 
-export default function Travels() {
+export default function HomePage() {
     //set new array with viaggi array
     const [travels, setTravels] = useState(viaggi)
     // search variable connect to search input
@@ -55,9 +54,7 @@ export default function Travels() {
                             </div>
                             {/* /input type text */}
                             <div className="col-auto">
-                                <Link to="/travelDetail">
-                                    <button className="btn btn-primary col-auto">Cerca</button>
-                                </Link>
+                                <button className="btn btn-primary col-auto">Cerca</button>
                             </div>
                             {/* /button to search the travel */}
 

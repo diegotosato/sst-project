@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Header() {
     return (
         <>
@@ -14,7 +16,7 @@ export default function Header() {
                     <nav className="navbar navbar-light">
                         <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" href="#" aria-current="page">Viaggi</a>
+                                <Link className="nav-link active">Viaggi</Link>
                             </li>
                         </ul>
                     </nav>
