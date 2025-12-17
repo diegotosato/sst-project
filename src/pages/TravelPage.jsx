@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function TravelPage({ viaggi }) {
@@ -7,8 +7,26 @@ export default function TravelPage({ viaggi }) {
 
 
     const [searchText, setSearchText] = useState("");
+    const [searchName, setSearchName] = useState("");
+    const [searchLast, setSearchLast] = useState("");
+    console.log(searchText, searchName, searchLast);
+
     const [travelers, setTravelers] = useState(viaggio.viaggiatori)
-    console.log(travelers);
+
+
+    function handleSubmit(e) {
+        e.preventDefault()
+
+        if (!searchLast) {
+            const filtered = travelers.filter(traveler => (
+                traveler.nome.toLowerCase().includes(searchName.toLowerCase()) ||
+                traveler.cognome.toLowerCase().includes(searchName.toLowerCase())
+            ))
+            setTravelers(filtered)
+        }
+    }
+
+
 
 
     return (
@@ -59,13 +77,17 @@ export default function TravelPage({ viaggi }) {
             </div>
 
             {/* SEARCH BAR */}
-            <form className="mb-3" onSubmit={(e) => e.preventDefault()}>
+            <form className="mb-3" onSubmit={handleSubmit}>
                 <div className="input-group">
                     <input
                         className="form-control"
                         placeholder="Cerca viaggiatori (nome/cognome)"
                         value={searchText}
-                        onChange={(e) => setSearchText(e.target.value)}
+                        onChange={(e) => {
+                            setSearchText(e.target.value)
+                            setSearchName(e.target.value.split(' ')[0])
+                            setSearchLast(e.target.value.split(' ')[1])
+                        }}
                     />
                     <button className="btn btn-primary" type="submit">
                         Cerca
