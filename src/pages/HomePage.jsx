@@ -248,9 +248,9 @@ export default function HomePage({ viaggi, setViaggi }) {
                                         placeholder="Nome"
                                         value={p.nome}
                                         onChange={(e) => {
-                                            const updated = [...newTrip.accompagnatori];
-                                            updated[i] = { ...updated[i], nome: e.target.value };
-                                            setNewTrip({ ...newTrip, accompagnatori: updated });
+                                            const accompagnatori = [...newTrip.accompagnatori];
+                                            accompagnatori[i] = { ...accompagnatori[i], nome: e.target.value };
+                                            setNewTrip({ ...newTrip, accompagnatori: accompagnatori });
                                         }}
                                     />
                                 </div>
@@ -260,9 +260,9 @@ export default function HomePage({ viaggi, setViaggi }) {
                                         placeholder="Cognome"
                                         value={p.cognome}
                                         onChange={(e) => {
-                                            const updated = [...newTrip.accompagnatori];
-                                            updated[i] = { ...updated[i], cognome: e.target.value };
-                                            setNewTrip({ ...newTrip, accompagnatori: updated });
+                                            const accompagnatori = [...newTrip.accompagnatori];
+                                            accompagnatori[i] = { ...accompagnatori[i], cognome: e.target.value };
+                                            setNewTrip({ ...newTrip, accompagnatori: accompagnatori });
                                         }}
                                     />
                                 </div>
@@ -272,9 +272,9 @@ export default function HomePage({ viaggi, setViaggi }) {
                                         placeholder="Telefono"
                                         value={p.telefono}
                                         onChange={(e) => {
-                                            const updated = [...newTrip.accompagnatori];
-                                            updated[i] = { ...updated[i], telefono: e.target.value };
-                                            setNewTrip({ ...newTrip, accompagnatori: updated });
+                                            const accompagnatori = [...newTrip.accompagnatori];
+                                            accompagnatori[i] = { ...accompagnatori[i], telefono: e.target.value };
+                                            setNewTrip({ ...newTrip, accompagnatori: accompagnatori });
                                         }}
                                     />
                                 </div>
@@ -284,9 +284,9 @@ export default function HomePage({ viaggi, setViaggi }) {
                                         placeholder="Email"
                                         value={p.mail}
                                         onChange={(e) => {
-                                            const updated = [...newTrip.accompagnatori];
-                                            updated[i] = { ...updated[i], mail: e.target.value };
-                                            setNewTrip({ ...newTrip, accompagnatori: updated });
+                                            const accompagnatori = [...newTrip.accompagnatori];
+                                            accompagnatori[i] = { ...accompagnatori[i], mail: e.target.value };
+                                            setNewTrip({ ...newTrip, accompagnatori: accompagnatori });
                                         }}
                                     />
                                     {newTrip.accompagnatori.length > 1 && (
